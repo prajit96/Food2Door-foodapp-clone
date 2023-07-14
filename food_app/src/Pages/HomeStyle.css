@@ -1,0 +1,56 @@
+.skillsection {
+    width: 90%;
+    margin:auto;
+    text-align: center;
+    background-color: var(--clr-bg);
+    height: 50vh;
+    /* max-height: 400px; */
+    cursor: pointer;
+  }
+  
+  .skillsection > div {
+    width: 11%;
+    height: 16vh;
+    max-height: 140px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+    font-weight: bold;
+    border: 1px solid rgb(242, 231, 236);
+    border-radius: 20px;
+    margin: 2.5%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+  }
+  .skillsection > div:hover {
+    background-color: var(--clr-bg);
+    overflow: hidden;
+    transform: scale(1.08);
+    box-shadow: rgb(190, 31, 108) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border: 1px solid var(--clr-primary);
+  }
+  
+  .skillsection > div > svg {
+    font-size: 8vh;
+    color: #00A3C4;
+  }
+  .skillsection > div > h5 {
+    position: relative;
+    top: 8px;
+  }
+  
+  @media (max-width: 600px) {
+    .skillsection {
+      height: 120vh;
+    }
+    .skillsection > div {
+      width: 40%;
+      margin-right: 5%;
+      margin-bottom: 2%;
+      height: 18vh;
+    }
+  }

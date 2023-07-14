@@ -1,12 +1,14 @@
 import './App.css';
 import NavBar from './Components/NavBar';
+import Allroutes from './Pages/Allroutes';
 import HomePage from './Pages/HomePage.jsx'
 
 function App() {
   return (
     <div className="App">
+      
       <NavBar/>
-      <HomePage/>
+      <Allroutes/>
     </div>
   );
 }

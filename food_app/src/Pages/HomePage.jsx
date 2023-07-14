@@ -1,11 +1,14 @@
 import React from "react";
-import { Box, Button, Flex, Text, SimpleGrid } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, SimpleGrid, Card, Image, Stack, CardBody, Heading, CardFooter } from "@chakra-ui/react";
+import {  IconButton } from '@chakra-ui/react';
+import "./HomeStyle.css"
 import { heroData } from "../utils/data";
 import Delivery from "../Images/delivery.png";
 import HeroBg from "../Images/heroBg.png";
 
 const HomePage = () => {
   return (
+    <>
     <Flex
       direction={{ base: "column", md: "row" }}
       gridGap={2}
@@ -98,10 +101,10 @@ const HomePage = () => {
           boxShadow="lg"
         >
           <img src={n.imageSrc} alt="I1" className="w-20 h-20 lg:w-40 lg:h-40 -mt-10 lg:-mt-20" />
-          <Text fontSize="base" lgFontSize="xl" fontWeight="semibold" color="textColor" mt={2} lgMt={4}>
+          <Text fontSize="base"  fontWeight="semibold" color="textColor" mt={2} >
             {n.name}
           </Text>
-          <Text fontSize="12px" lgFontSize="sm" color="lighttextGray" fontWeight="semibold" my={1} lgMy={3}>
+          <Text fontSize="12px"  color="lighttextGray" fontWeight="semibold" my={1} >
             {n.decp}
           </Text>
           <Text fontSize="sm" fontWeight="semibold" color="headingColor">
@@ -113,6 +116,184 @@ const HomePage = () => {
 </Flex>
     </Flex>
     
+
+    <Flex alignItems="center" mb={12}>
+        <Box pb={5}  ml="4%"  />
+        <Heading size="md">
+         <span size="md" style={{borderBottom:"3px solid tomato"}}>Our Fresh</span>  Food & Healthy Frouits
+        </Heading>
+        
+      </Flex>
+<Flex flexWrap="wrap" justifyContent="space-evenly">
+  <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Image
+      objectFit='cover'
+      maxW={{ base: '100%', sm: '220px' }}
+      // maxH={{ base: '100%', sm: '240px' }}
+      src="https://images.unsplash.com/photo-1600423115367-87ea7661688f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZydWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+      alt='Caffe Latte'
+    />
+  
+    <Stack>
+      <CardBody>
+        <Heading size='md'>Apple</Heading>
+  
+        <Text py='2'>
+          80 Calories
+        </Text>
+      </CardBody>
+  
+      <CardFooter>
+  <Flex alignItems="center" gap={2}>
+    <Button variant="solid" colorScheme="blue">
+      $ 12
+    </Button>
+    <Image
+      maxW={{ base: '100%', sm: '40px' }}
+      maxH={{ base: '40px', sm: 'auto' }}
+      objectFit="contain"
+      src="https://img.icons8.com/?size=512&id=119113&format=png"
+      alt=""
+    />
+  </Flex>
+</CardFooter>
+    </Stack>
+  </Card>
+  </Card>
+
+  <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Image
+      objectFit='cover'
+      maxW={{ base: '100%', sm: '200px' }}
+      src="https://images.unsplash.com/photo-1457296898342-cdd24585d095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGZydWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+      alt='Caffe Latte'
+    />
+  
+    <Stack>
+      <CardBody>
+        <Heading size='md'>Blue Berries</Heading>
+  
+        <Text py='2'>
+          80 Calories
+        </Text>
+      </CardBody>
+  
+      <CardFooter>
+  <Flex alignItems="center" gap={2}>
+    <Button variant="solid" colorScheme="blue">
+      $ 18
+    </Button>
+    <Image
+      maxW={{ base: '100%', sm: '40px' }}
+      maxH={{ base: '40px', sm: 'auto' }}
+      objectFit="contain"
+      src="https://img.icons8.com/?size=512&id=119113&format=png"
+      alt=""
+    />
+  </Flex>
+</CardFooter>
+    </Stack>
+  </Card>
+  
+  </Card>
+  <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+  >
+    <Image
+      objectFit='cover'
+      maxW={{ base: '100%', sm: '200px' }}
+      src="https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGZydWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+      alt='Caffe Latte'
+    />
+  
+    <Stack>
+      <CardBody>
+        <Heading size='md'>Orange Beri</Heading>
+  
+        <Text py='2'>
+          80 Calories
+        </Text>
+      </CardBody>
+  
+      <CardFooter>
+  <Flex alignItems="center" gap={2}>
+    <Button variant="solid" colorScheme="blue">
+      $ 12
+    </Button>
+    <Image
+      maxW={{ base: '100%', sm: '40px' }}
+      maxH={{ base: '40px', sm: 'auto' }}
+      objectFit="contain"
+      src="https://img.icons8.com/?size=512&id=119113&format=png"
+      alt=""
+    />
+  </Flex>
+</CardFooter>
+    </Stack>
+  </Card>
+  
+  </Card>
+  
+  {/* Add more Card components as needed */}
+</Flex>
+<Flex alignItems="center" mb={2}>
+  <Box pb={5} pt={20}  ml="4%"  />
+    <Heading size="md">
+      <span size="md" style={{borderBottom:"3px solid tomato"}}>Our H</span>ot Dishes
+    </Heading>  
+</Flex>
+<div className="skillsection">
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>Chicken</h1>
+  </div>
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>Rice</h1>
+  </div>
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>Fish</h1>
+  </div>
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>Fruit</h1>
+  </div>
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>IceCreame</h1>
+  </div>
+  <div>
+    <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
+    <h1>Soft Drinks</h1>
+  </div>
+</div>
+  </>
   );
 };
 

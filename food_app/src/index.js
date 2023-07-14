@@ -5,14 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from "@chakra-ui/react";
 import customTheme from "./utils/themes";
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+  <BrowserRouter>
   <ChakraProvider theme={customTheme}>
     <App />
   </ChakraProvider>
-  
+  </BrowserRouter>
   
 );
 
