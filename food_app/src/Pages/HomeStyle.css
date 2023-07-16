@@ -1,4 +1,4 @@
-.skillsection {
+.foodsection {
     width: 90%;
     margin:auto;
     text-align: center;
@@ -8,7 +8,7 @@
     cursor: pointer;
   }
   
-  .skillsection > div {
+  .foodsection > div {
     width: 11%;
     height: 16vh;
     max-height: 140px;
@@ -25,7 +25,7 @@
     align-items: center;
     transition: all 0.5s ease 0s;
   }
-  .skillsection > div:hover {
+  .foodsection > div:hover {
     background-color: var(--clr-bg);
     overflow: hidden;
     transform: scale(1.08);
@@ -34,20 +34,20 @@
     border: 1px solid var(--clr-primary);
   }
   
-  .skillsection > div > svg {
+  .foodsection > div > svg {
     font-size: 8vh;
     color: #00A3C4;
   }
-  .skillsection > div > h5 {
+  .foodsection > div > h5 {
     position: relative;
     top: 8px;
   }
   
   @media (max-width: 600px) {
-    .skillsection {
+    .foodsection {
       height: 120vh;
     }
-    .skillsection > div {
+    .foodsection > div {
       width: 40%;
       margin-right: 5%;
       margin-bottom: 2%;

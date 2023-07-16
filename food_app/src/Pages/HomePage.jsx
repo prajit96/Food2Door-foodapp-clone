@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Button, Flex, Text, SimpleGrid, Card, Image, Stack, CardBody, Heading, CardFooter } from "@chakra-ui/react";
-import {  IconButton } from '@chakra-ui/react';
 import "./HomeStyle.css"
 import { heroData } from "../utils/data";
 import Delivery from "../Images/delivery.png";
@@ -267,7 +266,7 @@ const HomePage = () => {
       <span size="md" style={{borderBottom:"3px solid tomato"}}>Our H</span>ot Dishes
     </Heading>  
 </Flex>
-<div className="skillsection">
+<div className="foodsection">
   <div>
     <img src="https://img.icons8.com/?size=512&id=YX6Nm9V3gJom&format=png" alt="" />
     <h1>Chicken</h1>

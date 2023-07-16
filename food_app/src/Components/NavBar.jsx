@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
-
+import { Link as RouterLink } from "react-router-dom";
 import Logo from "../Images/logo.png";
 
 const NavBar = (props) => {
@@ -10,10 +10,13 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <img src={Logo} alt="Logo" style={{ width: "120px", height: "auto" }}/>
+      <RouterLink to="/">
+        <img src={Logo} alt="Logo" style={{ width: "120px", height: "auto" }}/>
+      </RouterLink>
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
+    
   );
 };
 
@@ -71,9 +74,9 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/"> Home</MenuItem>
-        <MenuItem to="/menu"> Menu </MenuItem>
-        <MenuItem to="/aboutus"> About Us </MenuItem>
-        <MenuItem to="/service"> Service </MenuItem>
+        <MenuItem to="/menupage"> Menu </MenuItem>
+        <MenuItem to="/aboutuspage"> About Us </MenuItem>
+        <MenuItem to="/servicepage"> Service </MenuItem>
 
         <MenuItem to="/signup" isLast>
           <Button
