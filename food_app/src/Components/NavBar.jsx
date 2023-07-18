@@ -1,22 +1,30 @@
-import React from "react";
-import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+import { Link, Box, Flex, Button, Stack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { Image } from "@chakra-ui/react";
 import Logo from "../Images/logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "../redux/cartReducer/CartSlice";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const  {cart}  = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [cart]);
+
   return (
     <NavBarContainer {...props}>
       <RouterLink to="/">
-        <img src={Logo} alt="Logo" style={{ width: "120px", height: "auto" }}/>
+        <Image src={Logo} alt="Logo" maxW="120px" h="auto" />
       </RouterLink>
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
-    
   );
 };
 
@@ -52,10 +60,8 @@ const MenuToggle = ({ toggle, isOpen }) => {
 
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   return (
-    <Link href={to}>
-      <Text display="block" {...rest}>
-        {children}
-      </Text>
+    <Link as={RouterLink} to={to} display="block" {...rest}>
+      {children}
     </Link>
   );
 };
@@ -77,7 +83,16 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/menupage"> Menu </MenuItem>
         <MenuItem to="/aboutuspage"> About Us </MenuItem>
         <MenuItem to="/servicepage"> Service </MenuItem>
-
+        <MenuItem to="/cart">
+          <Image
+            src="https://img.icons8.com/?size=512&id=119113&format=png"
+            alt=""
+            maxW="20px"
+            maxH="20px"
+            objectFit="contain"
+            mr={2}
+          />
+        </MenuItem>
         <MenuItem to="/signup" isLast>
           <Button
             size="sm"
@@ -85,7 +100,7 @@ const MenuLinks = ({ isOpen }) => {
             color={["primary.500", "primary.500", "white", "white"]}
             bg={["white", "white", "primary.500", "primary.500"]}
             _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
+              bg: ["primary.100", "primary.100", "primary.600", "primary.600"],
             }}
           >
             Sign Up
