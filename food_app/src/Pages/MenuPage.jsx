@@ -19,9 +19,9 @@ export const MenuPage = () => {
 const DIV = styled.div`
   display: flex;
 
-  /* .sidebar{
+  .sidebar{
     width: 15%;
-  } */
+  }
   .productlist{
     width: 85%;
   }

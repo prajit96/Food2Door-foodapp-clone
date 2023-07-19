@@ -1,5 +1,6 @@
 import axios from "axios"
 import { DELETE_PRODUCT_SUCCESS, GET_PRODUCT_SUCCESS, PATCH_PRODUCT_SUCCESS, POST_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionTypes"
+import * as actionTypes from './actionTypes';
 
 export const addProduct = (newProduct) => (dispatch) => {
     dispatch({type: PRODUCT_REQUEST});
@@ -58,3 +59,23 @@ export const editProduct = (id, data) => (dispatch) => {
         dispatch({type: PRODUCT_FAILURE})
     })
 }
+
+export const addToCart = (product) => {
+    return { type: actionTypes.ADD_TO_CART, payload: product };
+  };
+  
+  export const getCartTotal = () => {
+    return { type: actionTypes.GET_CART_TOTAL };
+  };
+  
+  export const removeItem = (id) => {
+    return { type: actionTypes.REMOVE_ITEM, payload: id };
+  };
+  
+  export const increaseItemQuantity = (id) => {
+    return { type: actionTypes.INCREASE_ITEM_QUANTITY, payload: id };
+  };
+  
+  export const decreaseItemQuantity = (id) => {
+    return { type: actionTypes.DECREASE_ITEM_QUANTITY, payload: id };
+  };

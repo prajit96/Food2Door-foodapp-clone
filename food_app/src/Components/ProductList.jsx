@@ -25,10 +25,10 @@ export const ProductList = () => {
 
 
   return (<DIV>
-    {/* {foods.length > 0 && foods.map((el)=>{
+    {foods.length > 0 && foods.map((el)=>{
         return <ProductCard key={el.id} {...el}/>
-    })} */}
-    <ProductCard />
+    })}
+    {/* <ProductCard /> */}
     </DIV>)
   
 }

@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, Box, Flex, Button, Stack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { Image } from "@chakra-ui/react";
 import Logo from "../Images/logo.png";
-import { useDispatch, useSelector } from "react-redux";
-import { getCartTotal } from "../redux/cartReducer/CartSlice";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-
-  const  {cart}  = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCartTotal());
-  }, [cart]);
 
   return (
     <NavBarContainer {...props}>
