@@ -33,7 +33,16 @@ export const ProductList = () => {
   
 }
 const DIV = styled.div`
-    /* display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 20px; */
+    display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 40px;
+  }
 `
