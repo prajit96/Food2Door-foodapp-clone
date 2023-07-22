@@ -27,7 +27,7 @@ import styled from 'styled-components';
   ` 
   : null}
  `;
- 
+
 
  export const SignInContainer = styled.div`
  position: absolute;
@@ -39,7 +39,7 @@ import styled from 'styled-components';
  z-index: 2;
  ${props => (props.signinIn !== true ? `transform: translateX(100%);` : null)}
  `;
- 
+
  export const Form = styled.form`
  background-color: #ffffff;
  display: flex;
@@ -50,12 +50,12 @@ import styled from 'styled-components';
  height: 100%;
  text-align: center;
  `;
- 
+
  export const Title = styled.h1`
  font-weight: bold;
  margin: 0;
  `;
- 
+
  export const Input = styled.input`
  background-color: #eee;
  border: none;
@@ -63,7 +63,7 @@ import styled from 'styled-components';
  margin: 8px 0;
  width: 100%;
  `;
- 
+
 
  export const Button = styled.button`
     border-radius: 20px;
@@ -87,7 +87,7 @@ import styled from 'styled-components';
  background-color: transparent;
  border-color: #ffffff;
  `;
- 
+
  export const Anchor = styled.a`
  color: #333;
  font-size: 14px;
@@ -123,7 +123,7 @@ transform: translateX(0);
 transition: transform 0.6s ease-in-out;
 ${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
 `;
- 
+
  export const OverlayPanel = styled.div`
      position: absolute;
      display: flex;
