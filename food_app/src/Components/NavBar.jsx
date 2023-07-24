@@ -1,8 +1,12 @@
-import React from "react";
-import { Link, Box, Flex, Button, Stack } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Box, Flex, Button, Stack, useDisclosure } from "@chakra-ui/react";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { Image } from "@chakra-ui/react";
 import Logo from "../Images/logo.png";
+import {SideSignin} from "../Pages/SideSignin"
+import { useSelector } from "react-redux";
+import "../Styles/Navbar.css"
+import userIcon from "../Images/user.png";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -58,7 +62,28 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpenn }) => {
+  const [show, setShow] = useState(false);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+
+  const togglesearch = () => {
+    setShow(!show);
+  };
+
+  const user = useSelector((store) => {
+    return store.loginReducer.user;
+  });
+ 
+
+  const handleOpen = () => {
+    if (!!!user) {
+      onOpen();
+    } else {
+      navigate("/cart")
+    }
+  };
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -85,19 +110,19 @@ const MenuLinks = ({ isOpen }) => {
             mr={2}
           />
         </MenuItem>
-        <MenuItem to="/signup" isLast>
-          <Button
-            size="sm"
-            rounded="md"
-            color={["primary.500", "primary.500", "white", "white"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"],
-            }}
-          >
-            Sign Up
-          </Button>
-        </MenuItem>
+        <div className="top-bar__sign-in-wrapper">
+              <div className="top-bar__sign-in">
+                <p>{!!user === false ? "Sign in" : user?.name}</p>
+                <img
+                  src={userIcon}
+                  alt="profile user"
+                  style={{ height: "30px", marginLeft: "5px" }}
+                />
+              </div>
+              <div className="sign-in-hover">
+                <SideSignin isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+              </div>
+            </div>
       </Stack>
     </Box>
   );
