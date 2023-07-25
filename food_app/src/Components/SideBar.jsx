@@ -37,7 +37,7 @@ export const SideBar = () => {
 
   return <div>
     <br />
-    <h3 style={{fontWeight:"600"}}>Fliter by Category</h3>
+    <span style={{fontSize:"18px",fontWeight:"600",background: "-webkit-linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab 80%)"}}>Fliter by Category</span>
     <div>
         <input type="checkbox" value={"chicken"} onChange={handleCategory} checked={category.includes("chicken")}/>
         <label>Chicken</label>
@@ -63,13 +63,13 @@ export const SideBar = () => {
         <label>Soft Drink</label>
     </div>
     <br />
-    <h3 style={{fontWeight:"600"}}>Sort by Price</h3>
+    <span style={{fontSize:"18px",fontWeight:"600",background: "-webkit-linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab 80%)"}}>Sort by Price</span>
     <div onChange={handleSort}>
     <input type="radio" name='order' value={"asc"} defaultChecked={order === "asc"}/>
-    <label>Ascending</label>
+    <label>Low to High</label>
     <br />
     <input type="radio" name='order' value={"desc"} defaultChecked={order === "desc"}/>
-    <label>Descending</label>
+    <label>High to Low</label>
     </div>
     </div>
   

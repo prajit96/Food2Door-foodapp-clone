@@ -36,7 +36,7 @@ export const ProductCard = ({ id, name, price, category, image }) => {
       <Divider />
       <CardFooter>
         <ButtonGroup spacing='2'>
-          <Button variant='solid' colorScheme='blue'>
+          <Button variant='solid' colorScheme='blue' onClick={handleAddToCart}>
             Buy now
           </Button>
           <Button variant='ghost' colorScheme='blue' onClick={handleAddToCart}>

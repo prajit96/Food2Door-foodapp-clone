@@ -12,13 +12,16 @@ import {
   Button,
   IconButton,
   SimpleGrid,
-  Image
+  Image,
+  Center,
+  Heading
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { FaTrashAlt, FaArrowRight } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, increaseItemQuantity, decreaseItemQuantity } from '../redux/productReducer/action';
 import { REMOVE_ITEM } from '../redux/productReducer/actionTypes';
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const [total,setTotal] = useState(0)
@@ -58,8 +61,13 @@ const CartPage = () => {
   localStorage.setItem("cart", JSON.stringify(cart))
   return (
     <>
+    <Heading as="h5" size="lg" mb={4}>
+        Shopping Cart
+      </Heading>
       {cart.length === 0 ? (
-        <>Lol Nothing</>
+        <Center>
+            <Text fontSize="xl">Your cart is empty</Text>
+        </Center>
       ) : (
         <SimpleGrid
           gridTemplateColumns={["1fr", "5fr 2fr"]}
@@ -170,6 +178,7 @@ const CartPage = () => {
                 <Text>&#8377;{total+95/100}</Text>
                 
               </HStack>
+              <Link to="/checkout">
               <Button
                 bottom="0"
                 marginTop="2"
@@ -179,6 +188,8 @@ const CartPage = () => {
                 Checkout &nbsp;
                 <Icon as={FaArrowRight} color="white" />
               </Button>
+              </Link>
+              
             </VStack>
           </Container>
         </SimpleGrid>

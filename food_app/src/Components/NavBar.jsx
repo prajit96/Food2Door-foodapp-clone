@@ -19,7 +19,7 @@ const NavBar = (props) => {
         <Image src={Logo} alt="Logo" maxW="120px" h="auto" />
       </RouterLink>
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks isMenuOpen={isOpen} />
     </NavBarContainer>
   );
 };
@@ -62,7 +62,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpenn }) => {
+const MenuLinks = ({ isMenuOpen  }) => {
   const [show, setShow] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,7 +86,7 @@ const MenuLinks = ({ isOpenn }) => {
   };
   return (
     <Box
-      display={{ base: isOpen ? "block" : "none", md: "block" }}
+      display={{ base: isMenuOpen ? "block" : "none", md: "block" }}
       flexBasis={{ base: "100%", md: "auto" }}
     >
       <Stack

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Flex, Text, SimpleGrid, Card, Image, Stack, CardBody, Heading, CardFooter } from "@chakra-ui/react";
-import "./HomeStyle.css"
+import "../Styles/HomeStyle.css"
 import { heroData } from "../utils/data";
 import Delivery from "../Images/delivery.png";
 import HeroBg from "../Images/heroBg.png";
