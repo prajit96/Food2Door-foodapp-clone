@@ -1,11 +1,16 @@
 import React from "react";
-import { Box, Button, Flex, Text, SimpleGrid, Card, Image, Stack, CardBody, Heading, CardFooter } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, SimpleGrid, Card, Image, Stack, CardBody, Heading, CardFooter} from "@chakra-ui/react";
 import "../Styles/HomeStyle.css"
 import { heroData } from "../utils/data";
 import Delivery from "../Images/delivery.png";
 import HeroBg from "../Images/heroBg.png";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const handleorderNow = () =>{
+    navigate("/menupage")
+  }
   return (
     <>
     <Flex
@@ -52,12 +57,11 @@ const HomePage = () => {
         </Text>
 
         <Text fontSize="base" color="textColor" textAlign={{ base: "center", md: "left" }} w={{ md: "80%" }}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
+        At our food app, we are passionate about delivering the most delicious and
+        healthy food options to our customers. It all started with a simple idea 
+        - to make it easy for people to access fresh, nutritious, and mouthwatering
+        meals right at their doorstep.
         </Text>
-
         <Button
           type="button"
           bgGradient="linear(to-br, orange.400, orange.500)"
@@ -67,9 +71,12 @@ const HomePage = () => {
           rounded="lg"
           _hover={{ boxShadow: "lg" }}
           transition="all 0.3s ease-in-out"
+          onClick={handleorderNow}
         >
           Order Now
+          
         </Button>
+        
       </Flex>
 
       <Flex py={2} flex={0.8} items="center" pos="relative">
