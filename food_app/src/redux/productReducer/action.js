@@ -5,7 +5,7 @@ import * as actionTypes from './actionTypes';
 export const addProduct = (newProduct) => (dispatch) => {
     dispatch({type: PRODUCT_REQUEST});
     axios
-    .post("http://localhost:8080/foods", newProduct)
+    .post("https://food-app-data.onrender.com/foods", newProduct)
     .then((res)=>{
         console.log(res.data)
         dispatch({type: POST_PRODUCT_SUCCESS})
@@ -18,7 +18,7 @@ export const addProduct = (newProduct) => (dispatch) => {
 
 export const getProduct = (paramObj) => (dispatch) => {
     dispatch({type: PRODUCT_REQUEST})
-    axios.get("http://localhost:8080/foods", paramObj)
+    axios.get("https://food-app-data.onrender.com/foods", paramObj)
     .then((res)=>{
         dispatch({type: GET_PRODUCT_SUCCESS, payload: res.data})
     })
@@ -32,14 +32,14 @@ export const deleteProduct = (id) => (dispatch) => {
 
     let payload = [];
 
-    axios.get("http://localhost:8080/foods")
+    axios.get("https://food-app-data.onrender.com/foods")
     .then((res)=>{
         payload = res.data.filter((el)=> el.id !== id);
     })
 
 
     return axios
-    .delete(`http://localhost:8080/foods/${id}`)
+    .delete(`https://food-app-data.onrender.com/${id}`)
     .then((res)=>{
         dispatch({type: DELETE_PRODUCT_SUCCESS, payload})
     })
@@ -50,7 +50,7 @@ export const deleteProduct = (id) => (dispatch) => {
 
 export const editProduct = (id, data) => (dispatch) => {
     dispatch({type: PRODUCT_REQUEST})
-    axios.patch(`http://localhost:8080/foods/${id}`, data)
+    axios.patch(`https://food-app-data.onrender.com/${id}`, data)
     .then((res)=>{
         console.log(res.data);
         dispatch({type: PATCH_PRODUCT_SUCCESS})
